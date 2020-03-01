@@ -42,7 +42,40 @@ public class BaseTest {
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 
+@BeforeMethod
+	public void beforeMethod() {
+		System.out.println("Super Before Method");
+		((CanRecordScreen) driver ).startRecordingScreen();		
+	}
+	@AfterMethod
+	public void afterMethod(ITestResult result) {
 
+		System.out.println("Super After Method");
+		String media = ((CanRecordScreen) driver ).stopRecordingScreen();
+		
+		if(result.getStatus() == 2) {
+			
+			Map<String, String> params = result.getTestContext().getCurrentXmlTest().getAllParameters();
+			String dir = "videos" + File.separator + params.get("platformName")+ "_"+params.get("platformVersion")+ "_"
+					+params.get("deviceName")+ File.separator +dateTime+File.separator+result.getTestClass().getRealClass().getSimpleName();
+
+			File videodir = new File(dir);
+
+			if(!videodir.exists()) {
+				videodir.mkdirs();
+			}
+			try {
+				FileOutputStream stream=new FileOutputStream(videodir + File.separator + result.getName()+".mp4");
+				stream.write(Base64.decodeBase64(media));
+			}catch(FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+	}
 	@Parameters({"platformName", "platformVersion", "devicename"})
 	@BeforeTest
 	public void beforeTest(String platformName, String platformVersion, String deviceName) throws Exception {
