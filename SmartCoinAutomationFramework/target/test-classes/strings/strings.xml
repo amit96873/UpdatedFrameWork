@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="Language_Page_Title">Language</string>
+<string name="RegistrationFullnameMobilenumber_Page_Title">Need Instant Loan? Register with us...</string>
+<string name="Permission_Page_Title">Permissions</string>
+<string name="fullName_Error_text">Invalid Name</string>
+<string name="mobileNumber_Error_text">Invalid Mobile No.</string>
+<string name="SendSMS_Title_Text">Allow SmartCoin to send and view SMS messages?</string>
+<string name="Acces_Contacts_Title_Text">Allow SmartCoin to access your contacts?</string>
+<string name="managePhoneCalls_Title_Text">Allow SmartCoin to make and manage phone calls?</string>
+<string name="Location_Title_Text">Allow SmartCoin to access this device's location?</string>
+<string name="signinwithgmailfb_Title_Text">Sign in</string>
+<string name="facebookpage_Title_Text">facebook</string>
+<string name="ContinueLoginWithfacebookpage_Title_Text">Log in with Facebook</string>
+<string name="createpasswordPage_Title_Text">Create a 4-digit Pin</string>
+<string name="confirmpasswordPage_Title_Text">Confirm your 4-digit Pin</string>
+<string name="homePage_Title_Text">SmartCoin</string>
+</resources>
